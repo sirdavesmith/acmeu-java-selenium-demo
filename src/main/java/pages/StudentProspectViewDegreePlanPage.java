@@ -28,8 +28,6 @@ public class StudentProspectViewDegreePlanPage extends StudentViewDegreePlanPage
         WebElement parentFrame = this.getDriver().findElement(By.id(this.iFrame));
         this.getDriver().switchTo().frame(parentFrame);
 
-        //TODO: Refactor this when we can get waits to work in an iFrame
-        Thread.sleep(10000);
         Assert.assertTrue(this.getPageSource().contains(message), this.getPageName() + " source does NOT contain the message: " + message);
         Log.logMessage("Test has successfully validated that " + this.getPageName() + " contains the following message: " + message);
     }
